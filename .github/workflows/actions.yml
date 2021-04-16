@@ -14,6 +14,8 @@ jobs:
   run-github-actions:
     runs-on: ubuntu-latest
     steps:
+      - name: Get Payload
+        run: echo $ {{ github.event.client_payload.env}}
       - name: Checkout
         uses: actions/checkout@v2.3.4
       - name: List Files
