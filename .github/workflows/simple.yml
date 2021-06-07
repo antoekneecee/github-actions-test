@@ -7,8 +7,12 @@ jobs:
   run-windows-command:
     runs-on: windows-latest
     steps:
-      - name: Set selected color
-        run: echo '::set-output name=SELECTED_COLOR::green'
-        id: random-color-generator
-      - name: Get color
-        run: echo "The selected color is ${{ steps.random-color-generator.outputs.SELECTED_COLOR }}"
+      - name: Directory PowerShell
+        run: |
+          $loc = Get-Location
+          Write-Host "::set-output name=LOCATION::$loc"
+        id: current_dir
+      - name: Output
+        run: |
+          Write-Host "${{ steps.current_dir.outputs.LOCATION }}"
+
