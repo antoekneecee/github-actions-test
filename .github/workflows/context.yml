@@ -1,0 +1,9 @@
+name: EnvironmentTest
+
+jobs:
+  functions:
+    runs-on: windows-latest
+    steps:
+      - name: dump
+        run: |
+          echo ${{ "test" -eq "test" }}
