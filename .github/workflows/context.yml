@@ -1,5 +1,8 @@
 name: EnvironmentTest
 
+on:
+  workflow_dispatch:
+
 jobs:
   functions:
     runs-on: windows-latest
